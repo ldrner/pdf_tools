@@ -32,7 +32,7 @@ RSpec.describe PdfTools::Tool do
   describe '#command' do
     it 'includes the executable and the arguments' do
       allow(tool).to receive(:args).and_return(%w[-list Command])
-      expect(tool.command).to include(*%W[#{tool_name} -list Command])
+      expect(tool.command).to eq([tool_name, '-list', 'Command'])
     end
   end
 
@@ -52,21 +52,14 @@ RSpec.describe PdfTools::Tool do
   end
 
   describe '#i' do
-    it 'built proper command' do
+    it 'adds proper key=value args' do
       tool.i(title: 'My Title', author: 'My Name')
       expect(tool.args).to eq(['-i', "Title=\"My Title\"", '-i', "Author=\"My Name\""])
     end
   end
 
-  describe '#subcommand' do
-    it 'built proper command' do
-      tool.subcommand('foo').subcommand('bar')
-      expect(tool.args).to eq %w[foo bar]
-    end
-  end
-
   describe '#method_missing' do
-    it 'adds CLI options' do
+    it 'adds options' do
       tool.foo_bar('baz')
       expect(tool.args).to eq %w[-foo-bar baz]
     end
