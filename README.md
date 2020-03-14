@@ -1,3 +1,6 @@
+[![Maintainability](https://api.codeclimate.com/v1/badges/d402008317c8f6cc6715/maintainability)](https://codeclimate.com/github/ldrner/pdf_tools/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/d402008317c8f6cc6715/test_coverage)](https://codeclimate.com/github/ldrner/pdf_tools/test_coverage)
+
 # PdfTools
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/pdf_tools`. To experiment with that code, run `bin/console` for an interactive prompt.

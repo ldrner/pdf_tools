@@ -118,19 +118,11 @@ module PdfTools
       end
     end
 
-    # Add subcommand.
-    #
-    # @return [self]
-    def subcommand(name)
-      self << name.gsub('-', '_')
-      self
-    end
-
     # Any missing method will be transformed into a CLI option
     #
     # @example
     #   licmgr = PdfTools::Tool.new("licmgr")
-    #   licmgr.subcommand("info")
+    #   licmgr.<< "info"
     #   licmgr << "your license key"
     #   licmgr.command #=> ["licmgr", "info", "your license key"]
     def method_missing(name, *args)
