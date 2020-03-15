@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'pdf_tools/version'
 
 module PdfTools
