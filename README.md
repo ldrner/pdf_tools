@@ -1,5 +1,7 @@
 [![Gem Version](https://badge.fury.io/rb/pdf_tools.svg)](https://badge.fury.io/rb/pdf_tools)
 [![Build Status](https://travis-ci.org/ldrner/pdf_tools.svg?branch=master)](https://travis-ci.org/ldrner/pdf_tools)
+[![Maintainability](https://api.codeclimate.com/v1/badges/b4d61ab4a390d00dd346/maintainability)](https://codeclimate.com/github/ldrner/pdf_tools/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/b4d61ab4a390d00dd346/test_coverage)](https://codeclimate.com/github/ldrner/pdf_tools/test_coverage)
 
 
 # PdfTools

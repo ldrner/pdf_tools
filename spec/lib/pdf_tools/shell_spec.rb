@@ -8,7 +8,7 @@ RSpec.describe PdfTools::Shell do
   describe '#run' do
     it 'calls #execute with the command' do
       expect(subject).to receive(:execute).and_call_original
-      subject.run(%w[img2pdf version])
+      subject.run(%w[echo hello])
     end
 
     it 'returns stdout, stderr and status' do

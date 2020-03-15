@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-lib = File.expand_path("lib", __dir__)
+lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "pdf_tools/version"
+require 'pdf_tools/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'pdf_tools'
@@ -26,11 +26,11 @@ Gem::Specification.new do |spec|
   spec.bindir        = 'bin'
 
   spec.require_paths = ['lib']
-  spec.required_ruby_version = '~> 2.3'
+  spec.required_ruby_version = '~> 2.5.3'
 
   spec.add_development_dependency 'bundler', '>= 1.17'
   spec.add_development_dependency 'pry'
-  spec.add_development_dependency 'rake', '~> 10.0'
+  spec.add_development_dependency 'rake', '>= 12.3.3'
   spec.add_development_dependency 'rspec', '~> 3.7'
   spec.add_development_dependency 'simplecov'
 end
