@@ -15,7 +15,7 @@ module PdfTools
     # 10 License error
     # none Information (stdout) "Done."
     class ImageToPdf < PdfTools::Tool
-      TOOL_NAME = 'img2pdf'
+      TOOL_NAME = "img2pdf"
 
       def initialize(*args)
         super(TOOL_NAME, *args)
