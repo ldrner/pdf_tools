@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    pdf_tools (0.1.1)
+    pdf_tools (0.1.2)
 
 GEM
   remote: https://rubygems.org/
