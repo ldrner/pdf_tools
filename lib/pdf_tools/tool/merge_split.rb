@@ -13,7 +13,7 @@ module PdfTools
     # 4 Generic processing error.
     # 10 License error, e.g. invalid license key
     class MergeSplit < PdfTools::Tool
-      TOOL_NAME = 'pdfsplmrg'
+      TOOL_NAME = "pdfsplmrg"
 
       def initialize(*args)
         super(TOOL_NAME, *args)

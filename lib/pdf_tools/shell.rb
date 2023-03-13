@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'open3'
+require "open3"
 
 module PdfTools
   # Send commands to the shell
@@ -9,7 +9,7 @@ module PdfTools
       stdout, stderr, status = execute(command)
 
       if status != 0
-        raise PdfTools::Error, "Command `#{command.join(' ')}` failed!\n  Error: #{stderr}"
+        raise PdfTools::Error, "Command `#{command.join(" ")}` failed!\n  Error: #{stderr}"
       end
 
       $stderr.print(stderr) unless options[:stderr] == false
@@ -29,7 +29,7 @@ module PdfTools
 
       [stdout, stderr, status.exitstatus]
     rescue Errno::ENOENT, IOError
-      ['', "executable not found: \"#{command.first}\"", 127]
+      ["", "executable not found: \"#{command.first}\"", 127]
     end
   end
 end

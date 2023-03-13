@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'pdf_tools/shell'
+require "pdf_tools/shell"
 
 module PdfTools
   # Abstract class that wraps command-line tools.
@@ -37,8 +37,8 @@ module PdfTools
     attr_reader :name, :args
 
     def initialize(name)
-      @name  = name
-      @args  = []
+      @name = name
+      @args = []
     end
 
     # Build and execute the command.
@@ -111,9 +111,9 @@ module PdfTools
     #   tool << 'image.jpg'
     #   tool << 'output.pdf'
     KEY_VALUE_OPTIONS.each do |option|
-      define_method(option.gsub('-', '_')) do |hash = {}|
-        hash.flat_map { |k, v| ["-#{option}", [k.capitalize, "\"#{v}\""].join('=')] }
-            .each { |el| self << el }
+      define_method(option.tr("-", "_")) do |hash = {}|
+        hash.flat_map { |k, v| ["-#{option}", [k.capitalize, "\"#{v}\""].join("=")] }
+          .each { |el| self << el }
         self
       end
     end
@@ -126,22 +126,22 @@ module PdfTools
     #   licmgr << "your license key"
     #   licmgr.command #=> ["licmgr", "info", "your license key"]
     def method_missing(name, *args)
-      option = "-#{name.to_s.tr('_', '-')}"
+      option = "-#{name.to_s.tr("_", "-")}"
       self << option
-      self.merge!(args)
+      merge!(args)
       self
     end
 
     def self.available_options
       tool = new
-      tool << '-version'
+      tool << "-version"
 
       help_page = tool.call(stderr: false)
-      available_options = help_page.scan(/^\s+-[a-z\-]+/).map(&:strip)
-      available_options.map { |o| o[1..-1].tr('-', '_') }
+      available_options = help_page.scan(/^\s+-[a-z-]+/).map(&:strip)
+      available_options.map { |o| o[1..].tr("-", "_") }
     end
   end
 end
 
-require 'pdf_tools/tool/image_to_pdf'
-require 'pdf_tools/tool/merge_split'
+require "pdf_tools/tool/image_to_pdf"
+require "pdf_tools/tool/merge_split"

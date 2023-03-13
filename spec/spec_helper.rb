@@ -1,6 +1,6 @@
-require 'bundler/setup'
-require 'pdf_tools'
-require 'simplecov'
+require "bundler/setup"
+require "pdf_tools"
+require "simplecov"
 
 SimpleCov.start
 
