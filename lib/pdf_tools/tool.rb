@@ -66,7 +66,7 @@ module PdfTools
       options[:stderr] = false if block_given?
 
       shell = PdfTools::Shell.new
-      stdout, stderr, status = shell.run(command, options)
+      stdout, stderr, status = shell.run(command, **options)
       yield stdout, stderr, status if block_given?
 
       stdout.chomp("\n")
